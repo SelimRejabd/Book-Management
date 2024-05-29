@@ -1,5 +1,4 @@
 <?php
-
 $books = json_decode(file_get_contents('books.json'), true);
 ?>
 
@@ -31,8 +30,8 @@ $books = json_decode(file_get_contents('books.json'), true);
                 <td><?php echo htmlspecialchars($book['stock']); ?></td>
                 <td><?php echo htmlspecialchars($book['price']); ?></td>
                 <td>
-                    <a href="update_book.php?id=<?php echo $book['id']; ?>">Edit</a>
-                    <a href="delete_book.php?id=<?php echo $book['id']; ?>">Delete</a>
+                    <a class="button edit" href="update_book.php?id=<?php echo $book['id']; ?>">Edit</a>
+                    <a class="button delete" href="delete_book.php?id=<?php echo $book['id']; ?>">Delete</a>
                 </td>
             </tr>
         <?php endforeach; ?>
@@ -44,7 +43,7 @@ $books = json_decode(file_get_contents('books.json'), true);
         <input type="text" name="isbn" placeholder="ISBN" required>
         <input type="number" name="stock" placeholder="Stock" required>
         <input type="text" name="price" placeholder="Price" required>
-        <button type="submit">Add Book</button>
+        <button type="submit" class="button add">Add Book</button>
     </form>
 </body>
 </html>
